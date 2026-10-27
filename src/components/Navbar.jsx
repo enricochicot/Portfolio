@@ -13,7 +13,7 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container navbar-inner">
         <Link to="/" className="logo">{profile.name}</Link>
-        <nav>
+        <nav aria-label="Navegação principal">
           {links.map(({ to, label }) => (
             <NavLink key={to} to={to} end={to === '/'}>
               {label}

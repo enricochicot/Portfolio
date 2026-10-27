@@ -21,6 +21,14 @@ Use esta skill para trabalhar neste repositório. Baseie mudanças na implementa
 - Não adicione dependências ou infraestrutura sem necessidade demonstrada pelo requisito.
 - Atualize a documentação diretamente relacionada quando o comportamento ou a arquitetura mudar.
 
+## Design e interface
+
+- Para criar, revisar ou alterar a interface, siga a skill instalada [Impeccable](../impeccable/SKILL.md) e consulte a referência específica do comando adequado; não duplique aqui as regras detalhadas da biblioteca.
+- Em tarefas de interface, siga o fluxo de preparação da skill, incluindo a execução de `scripts/impeccable context` uma vez por sessão e a leitura de `reference/craft-floor.md` imediatamente antes de editar UI.
+- Escolha o comando conforme a necessidade, como `layout` para estrutura e espaçamento, `typeset` para tipografia, `audit` para verificações técnicas ou `polish` para refinamento final.
+- Para a apresentação do portfólio e a vitrine de projetos, use o modo “Experience”; nas demais superfícies, determine o modo conforme a tarefa e a orientação do Impeccable. Preserve o conteúdo factual e o português brasileiro definidos no projeto; reutilize os tokens CSS e padrões existentes, especialmente os de `src/index.css`.
+- Impeccable fornece orientação e ferramentas para agentes de design; não é uma dependência de interface em tempo de execução. Não adicione um pacote npm de UI só por causa desta integração.
+
 ## Validação
 
 1. Para mudanças de código, execute `npm run build`.
