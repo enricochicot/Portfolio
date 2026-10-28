@@ -8,8 +8,28 @@
   --accent: #9db9ff;
   --accent-strong: #c4d5ff;
   --line: #2b3542;
+  --button-text: #101722;
+  --tag-line: #34445b;
+  --tag-bg: #1b2635;
+  --card-hover-line: #45566d;
   --content-width: 1080px;
   --radius: 10px;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --surface-raised: #edf1f7;
+  --text: #202633;
+  --muted: #566273;
+  --accent: #4569b2;
+  --accent-strong: #2e4d8c;
+  --line: #d8dee8;
+  --button-text: #ffffff;
+  --tag-line: #c9d4e4;
+  --tag-bg: #eef3fb;
+  --card-hover-line: #9baac0;
 }
 
 * {
@@ -20,6 +40,8 @@ html {
   min-width: 320px;
   background: var(--bg);
   scrollbar-color: var(--line) var(--bg);
+  accent-color: var(--accent);
+  caret-color: var(--accent);
 }
 
 body {

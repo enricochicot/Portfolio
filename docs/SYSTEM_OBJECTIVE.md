@@ -37,9 +37,11 @@ São destinos de navegação, não integrações controladas ou monitoradas pela
 ### Capacidades existentes
 
 - Apresentar informações de perfil, habilidades e interesses.
+- Alternar idioma (português brasileiro/inglês) e tema (claro/escuro) na navegação compartilhada.
 - Listar projetos, suas tecnologias e descrições resumidas.
 - Direcionar visitantes para repositórios GitHub e canais de contato externos.
 - Fornecer navegação cliente entre páginas e uma resposta básica para rotas desconhecidas.
+- Permitir que o visitante alterne a interface entre português brasileiro e inglês, e entre os temas claro e escuro.
 
 ### Fora do escopo atual do código
 

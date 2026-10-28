@@ -11,12 +11,13 @@ O código não implementa servidor de aplicação, API, banco de dados, autentic
 | Área | Arquivos | Responsabilidade |
 | --- | --- | --- |
 | Inicialização | `index.html`, `src/main.jsx` | Define o documento HTML, o elemento `#root`, cria a raiz React, ativa `React.StrictMode`, instala `BrowserRouter` e importa o CSS global. |
-| Composição e rotas | `src/App.jsx` | Mantém Navbar e Footer ao redor do conteúdo e associa os caminhos às páginas. Inclui uma resposta simples para caminhos não reconhecidos. |
+| Composição e rotas | `src/App.jsx` | Mantém Navbar e Footer ao redor do conteúdo, associa os caminhos às páginas e controla os idiomas e temas disponíveis. Inclui uma resposta simples para caminhos não reconhecidos. |
 | Componentes compartilhados | `src/components/Navbar.jsx`, `src/components/Footer.jsx` | Apresenta a navegação entre rotas, a identidade do perfil e o rodapé com ano corrente. |
 | Páginas | `src/pages/<Tela>/<Tela>.jsx`; especificações em `docs/specs/<tela>.md` | Cada tela mantém o componente no código e sua especificação em Markdown fora de `src`. |
 | Conteúdo | `src/data.js` | Exporta os objetos `profile` e `projects`, consumidos pelas páginas e componentes. |
 | Estilos | `src/App.css` e um `.css` por página/componente | `App.css` define tokens e layout base; cada tela e componente tem seu CSS escopado.|
 | Build | `vite.config.js`, `package.json` | Configura Vite com o plugin React e scripts de desenvolvimento, build e preview. |
+| Idiomas | `src/translations.js` | Mantém os textos da interface em português brasileiro e inglês, selecionados pelos controles da Navbar. |
 
 ## 3. Dependências
 
@@ -41,7 +42,8 @@ O projeto declara `"type": "module"` e usa imports/exports ES Modules. Não há 
 3. `main.jsx` cria a raiz usando `ReactDOM.createRoot`, aplica `React.StrictMode`, envolve a aplicação em `BrowserRouter` e importa `App.css`.
 4. `App.jsx` renderiza o cabeçalho, o conteúdo da rota dentro de `main.container` e o rodapé.
 5. O React Router seleciona a página conforme o caminho atual. Uma URL sem correspondência exibe “Página não encontrada”.
-6. As páginas leem o conteúdo estático de `data.js`; não há requisição remota ou carregamento assíncrono.
+6. `App.jsx` compartilha o idioma ativo com as páginas e atualiza o atributo `lang` do documento; o tema selecionado é aplicado em `data-theme` no elemento raiz.
+7. As páginas leem o conteúdo estático de `data.js`; não há requisição remota ou carregamento assíncrono.
 
 ## 5. Rotas e navegação
 
@@ -71,7 +73,8 @@ Não há validação de schema em tempo de compilação ou execução: os dados 
 - Páginas e componentes compartilhados ficam separados em `src/pages/` e `src/components/`.
 - Cada página e componente importa seu próprio CSS, escopado pela classe raiz da tela; só tokens e layout base ficam em `src/App.css`.
 - As cores globais são expostas por custom properties em `:root` (`--bg`, `--surface`, `--text`, `--muted`, `--accent`).
-- O conteúdo e a interface estão em português brasileiro.
+- O idioma inicial é português brasileiro e pode ser alternado para inglês; os textos da interface são mantidos em `src/translations.js`.
+- O tema inicial é escuro e pode ser alternado para claro; os tokens de tema ficam em `src/App.css`.
 - Links externos de projetos e GitHub abrem nova aba (`target="_blank"`) e usam `rel="noreferrer"`. Links internos usam React Router.
 - A configuração observável do Vite consiste no plugin React; não há aliases, variáveis de ambiente ou configuração adicional declarada.
 - `.gitignore` exclui `node_modules`, `dist` e `.DS_Store`.

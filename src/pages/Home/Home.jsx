@@ -6,14 +6,14 @@ import { profile, projects } from '../../data.js'
 const featured = projects.filter((p) => p.tech === 'C#')
 const recent = projects.slice(-3).reverse()
 
-function ProjectCard({ project }) {
+function ProjectCard({ project, copy }) {
   return (
     <article className="card">
       <h3>{project.title}</h3>
       <p>{project.description}</p>
       <span className="tag">{project.tech}</span>
       <a className="project-link" href={project.link} target="_blank" rel="noreferrer">
-        <span>Ver no GitHub</span>
+        <span>{copy.projectLink}</span>
         <svg aria-hidden="true" viewBox="0 0 16 16">
           <path d="M3.5 8h9m-4-4 4 4-4 4" />
         </svg>
@@ -22,12 +22,13 @@ function ProjectCard({ project }) {
   )
 }
 
-export default function Home() {
+export default function Home({ copy }) {
   const [message, setMessage] = useState({ name: '', text: '' })
+  const { profile: localizedProfile, home: homeCopy, projects: projectCopy } = copy
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const subject = encodeURIComponent(`Contato pelo portfólio - ${message.name}`)
+    const subject = encodeURIComponent(homeCopy.emailSubject(message.name))
     const body = encodeURIComponent(message.text)
     window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`
   }
@@ -38,73 +39,73 @@ export default function Home() {
       <div className="hero-main">
         <h1>{profile.name}</h1>
         <p className="lead">
-          {profile.role}. Foco em {profile.focus}.
+          {homeCopy.lead(localizedProfile)}
         </p>
         <div className="actions">
-          <Link to="/projetos" className="btn">Ver projetos</Link>
-          <Link to="/contato" className="btn btn-outline">Fale comigo</Link>
+          <Link to="/projetos" className="btn">{homeCopy.viewProjects}</Link>
+          <Link to="/contato" className="btn btn-outline">{homeCopy.contactMe}</Link>
         </div>
       </div>
-      <aside className="hero-aside" aria-label="Resumo profissional">
+      <aside className="hero-aside" aria-label={homeCopy.summary}>
         <div className="hero-detail">
-          <h2>Foco</h2>
-          <p>{profile.focus}</p>
+          <h2>{homeCopy.focus}</h2>
+          <p>{localizedProfile.focus}</p>
         </div>
         <div className="hero-detail">
-          <h2>Base</h2>
-          <p>{profile.location}</p>
+          <h2>{homeCopy.base}</h2>
+          <p>{localizedProfile.location}</p>
         </div>
       </aside>
     </section>
 
-    <section className="home-section" aria-labelledby="destaques-title">
-      <h2 id="destaques-title" className="section-title">Destaques</h2>
+    <section className="home-section" aria-labelledby="highlights-title">
+      <h2 id="highlights-title" className="section-title">{homeCopy.highlights}</h2>
       <div className="grid">
         {featured.map((p) => (
-          <ProjectCard key={p.title} project={p} />
+          <ProjectCard key={p.title} project={{ ...p, description: projectCopy.descriptions[p.title] }} copy={homeCopy} />
         ))}
       </div>
     </section>
 
-    <section className="home-section" aria-labelledby="sobre-title">
-      <h2 id="sobre-title" className="section-title">Sobre</h2>
+    <section className="home-section" aria-labelledby="about-title">
+      <h2 id="about-title" className="section-title">{homeCopy.about}</h2>
       <p className="page-intro">
-        Estudante de {profile.education}, com foco em {profile.focus}. Gosto de {profile.hobbies.join(', ').toLowerCase()}.
+        {homeCopy.aboutIntro(localizedProfile)}
       </p>
       <ul className="tags home-tags">
         {profile.skills.map((s) => (
           <li key={s}>{s}</li>
         ))}
       </ul>
-      <Link to="/sobre" className="section-link">Saiba mais sobre mim →</Link>
+      <Link to="/sobre" className="section-link">{homeCopy.learnAbout}</Link>
     </section>
 
-    <section className="home-section" aria-labelledby="projetos-title">
-      <h2 id="projetos-title" className="section-title">Projetos recentes</h2>
+    <section className="home-section" aria-labelledby="recent-projects-title">
+      <h2 id="recent-projects-title" className="section-title">{homeCopy.recentProjects}</h2>
       <div className="grid">
         {recent.map((p) => (
-          <ProjectCard key={p.title} project={p} />
+          <ProjectCard key={p.title} project={{ ...p, description: projectCopy.descriptions[p.title] }} copy={homeCopy} />
         ))}
       </div>
-      <Link to="/projetos" className="section-link">Ver todos os projetos →</Link>
+      <Link to="/projetos" className="section-link">{homeCopy.allProjects}</Link>
     </section>
 
-    <section className="home-section" aria-labelledby="contato-title">
-      <h2 id="contato-title" className="section-title">Contato</h2>
+    <section className="home-section" aria-labelledby="contact-title">
+      <h2 id="contact-title" className="section-title">{homeCopy.contact}</h2>
       <div className="home-contact">
         <ul className="contact-links">
           <li>
-            <span>E-mail</span>
+            <span>{homeCopy.email}</span>
             <a href={`mailto:${profile.email}`}>{profile.email}</a>
           </li>
           <li>
-            <span>GitHub</span>
+            <span>{homeCopy.github}</span>
             <a href={profile.github} target="_blank" rel="noreferrer">enricochicot</a>
           </li>
         </ul>
         <form className="contact-form" onSubmit={handleSubmit}>
           <label>
-            Nome
+            {homeCopy.name}
             <input
               type="text"
               required
@@ -113,7 +114,7 @@ export default function Home() {
             />
           </label>
           <label>
-            Mensagem
+            {homeCopy.message}
             <textarea
               rows="4"
               required
@@ -121,7 +122,7 @@ export default function Home() {
               onChange={(e) => setMessage({ ...message, text: e.target.value })}
             />
           </label>
-          <button type="submit" className="btn">Enviar mensagem</button>
+          <button type="submit" className="btn">{homeCopy.sendMessage}</button>
         </form>
       </div>
     </section>

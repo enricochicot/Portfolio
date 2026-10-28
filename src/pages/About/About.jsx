@@ -1,27 +1,26 @@
 import './About.css'
-import { profile } from '../../data.js'
+import { profile as sourceProfile } from '../../data.js'
 
-export default function About() {
+export default function About({ copy, profile }) {
   return (
     <section className="content-page about-page">
       <div className="page-heading">
-        <h1>Sobre mim</h1>
+        <h1>{copy.title}</h1>
         <p className="page-intro">
-          Sou estudante de {profile.education}, atuo como Analista Júnior e moro
-          em {profile.location}. Meu foco é {profile.focus}.
+          {copy.intro(profile)}
         </p>
       </div>
       <div className="about-groups">
         <section className="about-group">
-          <h2>Tecnologias</h2>
+          <h2>{copy.technologies}</h2>
           <ul className="tags">
-            {profile.skills.map((s) => (
+            {sourceProfile.skills.map((s) => (
               <li key={s}>{s}</li>
             ))}
           </ul>
         </section>
         <section className="about-group">
-          <h2>Hobbies</h2>
+          <h2>{copy.hobbies}</h2>
           <ul className="tags">
             {profile.hobbies.map((h) => (
               <li key={h}>{h}</li>
