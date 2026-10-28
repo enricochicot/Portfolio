@@ -1,0 +1,48 @@
+.contact-page h1 {
+  margin: 0 0 1.25rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.contact-page .contact-intro {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.2rem;
+}
+
+.contact-page .contact-links {
+  max-width: 720px;
+  margin: 3rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.contact-page .contact-links li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-page .contact-links li > span {
+  color: var(--muted);
+}
+
+.contact-page .contact-links a {
+  overflow-wrap: anywhere;
+  font-size: clamp(1rem, 2.6vw, 1.25rem);
+}
+
+@media (max-width: 520px) {
+  .contact-page .contact-links li {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+}
