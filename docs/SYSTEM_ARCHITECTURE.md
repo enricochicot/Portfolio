@@ -13,7 +13,7 @@ O código não implementa servidor de aplicação, API, banco de dados, autentic
 | Inicialização | `index.html`, `src/main.jsx` | Define o documento HTML, o elemento `#root`, cria a raiz React, ativa `React.StrictMode`, instala `BrowserRouter` e importa o CSS global. |
 | Composição e rotas | `src/App.jsx` | Mantém Navbar e Footer ao redor do conteúdo e associa os caminhos às páginas. Inclui uma resposta simples para caminhos não reconhecidos. |
 | Componentes compartilhados | `src/components/Navbar.jsx`, `src/components/Footer.jsx` | Apresenta a navegação entre rotas, a identidade do perfil e o rodapé com ano corrente. |
-| Páginas | `src/pages/*.jsx` | Renderiza as experiências de início, sobre, projetos e contato. |
+| Páginas | `src/pages/<Tela>/<Tela>.jsx`; especificações em `docs/specs/<tela>.md` | Cada tela mantém o componente no código e sua especificação em Markdown fora de `src`. |
 | Conteúdo | `src/data.js` | Exporta os objetos `profile` e `projects`, consumidos pelas páginas e componentes. |
 | Estilos | `src/index.css` | Define tokens de cor, tipografia, layout, navegação, botões, tags, cartões e rodapé. |
 | Build | `vite.config.js`, `package.json` | Configura Vite com o plugin React e scripts de desenvolvimento, build e preview. |
@@ -47,10 +47,10 @@ O projeto declara `"type": "module"` e usa imports/exports ES Modules. Não há 
 
 | Caminho | Componente | Comportamento |
 | --- | --- | --- |
-| `/` | `Home` | Exibe nome, função, foco e links internos para projetos e contato. |
-| `/sobre` | `About` | Exibe formação, função, localização, foco, habilidades e hobbies. |
-| `/projetos` | `Projects` | Percorre a coleção `projects` e apresenta cartões com título, descrição, tecnologia e link externo ao GitHub. |
-| `/contato` | `Contact` | Exibe link de e-mail `mailto:` e link externo para GitHub. |
+| `/` | `src/pages/Home/Home.jsx` (`Home`) | Exibe nome, função, foco e links internos para projetos e contato. |
+| `/sobre` | `src/pages/About/About.jsx` (`About`) | Exibe formação, função, localização, foco, habilidades e hobbies. |
+| `/projetos` | `src/pages/Projects/Projects.jsx` (`Projects`) | Percorre a coleção `projects` e apresenta cartões com título, descrição, tecnologia e link externo ao GitHub. |
+| `/contato` | `src/pages/Contact/Contact.jsx` (`Contact`) | Exibe link de e-mail `mailto:` e link externo para GitHub. |
 | `*` | elemento inline em `App` | Exibe uma mensagem básica de página não encontrada. |
 
 O menu usa `NavLink`, com `end` aplicado à rota `/` para que a indicação de ativo não corresponda a todas as subrotas. Os botões das páginas usam `Link` para navegação interna, evitando navegação externa desnecessária.

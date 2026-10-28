@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { profile } from '../data.js'
+import { profile } from '../../data.js'
 
 export default function Home() {
   return (
