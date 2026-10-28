@@ -5,6 +5,7 @@ A tela HOME é a página inicial do portfólio, onde são apresentados os princi
 ### Seções da Tela HOME
 
 - **Cabeçalho:** Contém o nome do autor e a navegação principal.
+- **Hero:** Apresenta nome, função, links para projetos e contato, além de uma foto do autor cercada pelas marcas das tecnologias do perfil.
 - **Destaques:** Apresenta os principais projetos ou conquistas do autor.
 - **Sobre:** Breve descrição sobre o autor.
 - **Projetos:** Lista de projetos recentes com links para detalhes.
