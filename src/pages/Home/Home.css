@@ -1,0 +1,325 @@
+.home-page .hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(210px, 0.7fr);
+  align-items: center;
+  gap: clamp(3rem, 9vw, 8rem);
+  min-height: min(58vh, 590px);
+}
+
+.home-page .hero-main h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(4rem, 9vw, 6rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+  white-space: nowrap;
+}
+
+.home-page .lead {
+  max-width: 39rem;
+  margin: 1.75rem 0 0;
+  color: var(--muted);
+  font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+  line-height: 1.55;
+}
+
+.home-page .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 2.5rem;
+}
+
+.home-page .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.7rem 1.2rem;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: var(--accent);
+  color: #101722;
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.home-page .btn:hover {
+  border-color: var(--accent-strong);
+  background: var(--accent-strong);
+  color: #101722;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.home-page .btn-outline {
+  border-color: var(--line);
+  background: transparent;
+  color: var(--text);
+}
+
+.home-page .btn-outline:hover {
+  border-color: var(--accent);
+  background: var(--surface);
+  color: var(--accent-strong);
+}
+
+.home-page .hero-aside {
+  display: grid;
+  gap: 2.25rem;
+  padding-block: 1.5rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.home-page .hero-detail h2 {
+  margin: 0 0 0.45rem;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.home-page .hero-detail p {
+  margin: 0;
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.home-page .home-section {
+  margin-top: clamp(4rem, 9vw, 7rem);
+}
+
+.home-page .section-title {
+  margin: 0 0 1.75rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+
+.home-page .page-intro {
+  max-width: 66ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.home-page .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-page .tags li {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.home-page .section-link {
+  display: inline-block;
+  margin-top: 1.75rem;
+  font-weight: 600;
+}
+
+.home-page .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 1rem;
+}
+
+.home-page .card {
+  display: flex;
+  min-height: 240px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(1.35rem, 3vw, 1.8rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.home-page .card:hover {
+  transform: translateY(-3px);
+  border-color: #45566d;
+  background: var(--surface-raised);
+}
+
+.home-page .card h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.55rem;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+.home-page .card p {
+  margin: 0.8rem 0 1.1rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.home-page .tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0.15rem 0.65rem;
+  border: 1px solid #34445b;
+  border-radius: 999px;
+  background: #1b2635;
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+}
+
+.home-page .project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 44px;
+  margin-top: auto;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.home-page .project-link svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+  transition: transform 180ms ease;
+}
+
+.home-page .project-link:hover svg {
+  transform: translateX(3px);
+}
+
+.home-page .home-contact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  align-items: start;
+  gap: 2.5rem;
+}
+
+.home-page .contact-links {
+  max-width: 720px;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.home-page .contact-links li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.home-page .contact-links li > span {
+  color: var(--muted);
+}
+
+.home-page .contact-links a {
+  overflow-wrap: anywhere;
+  font-size: clamp(1rem, 2.6vw, 1.25rem);
+}
+
+.home-page .contact-form {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.home-page .contact-form label {
+  display: grid;
+  gap: 0.4rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.home-page .contact-form input,
+.home-page .contact-form textarea {
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  resize: vertical;
+}
+
+.home-page .contact-form input:focus-visible,
+.home-page .contact-form textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.home-page .contact-form .btn {
+  justify-self: start;
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  .home-page .hero {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    min-height: auto;
+  }
+
+  .home-page .hero-main h1 {
+    white-space: normal;
+  }
+
+  .home-page .hero-aside {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .home-page .hero-main h1 {
+    font-size: clamp(3.75rem, 17vw, 5rem);
+  }
+
+  .home-page .actions {
+    gap: 0.65rem;
+    margin-top: 2rem;
+  }
+
+  .home-page .actions .btn {
+    flex: 1;
+    padding-inline: 0.75rem;
+  }
+
+  .home-page .hero-aside {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .home-page .contact-links li {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+}

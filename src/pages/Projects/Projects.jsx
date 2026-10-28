@@ -1,3 +1,4 @@
+import './Projects.css'
 import { projects } from '../../data.js'
 
 export default function Projects() {

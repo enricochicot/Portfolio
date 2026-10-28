@@ -7,4 +7,6 @@ Este módulo contém elementos de interface usados ao redor das páginas:
 
 Ambos consomem `profile` de `../data.js`. `App.jsx` os renderiza fora da seleção de rotas, portanto aparecem também quando a rota não é encontrada.
 
-Ao alterar a navegação, mantenha os caminhos sincronizados com as rotas de `src/App.jsx`. Os estilos correspondentes estão em `src/index.css`.
+Em telas de até 760 px, a navegação fica em um menu acionado por botão. O menu fecha ao selecionar um link ou pressionar Escape.
+
+Ao alterar a navegação, mantenha os caminhos sincronizados com as rotas de `src/App.jsx`. Cada componente importa seu próprio CSS (`Navbar.css`, `Footer.css`).

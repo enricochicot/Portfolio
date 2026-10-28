@@ -1,3 +1,4 @@
+import './About.css'
 import { profile } from '../../data.js'
 
 export default function About() {

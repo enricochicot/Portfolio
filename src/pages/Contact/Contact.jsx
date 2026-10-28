@@ -1,3 +1,4 @@
+import './Contact.css'
 import { profile } from '../../data.js'
 
 export default function Contact() {
