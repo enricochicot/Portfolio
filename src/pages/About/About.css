@@ -23,7 +23,7 @@
 .about-page .about-groups {
   display: grid;
   gap: 3.5rem;
-  margin-top: clamp(3rem, 7vw, 5.5rem);
+  margin-top: clamp(2rem, 4vw, 3rem);
 }
 
 .about-page .about-group h2 {

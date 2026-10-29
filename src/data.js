@@ -1,7 +1,7 @@
 export const profile = {
   name: 'Enrico Leite',
   role: 'Analista Júnior | C# | .NET | n8n | Flutter',
-  location: 'São Paulo, Brasil',
+  location: 'São José do Rio Preto, São Paulo, Brasil',
   education: 'Análise e Desenvolvimento de Sistemas',
   focus: 'Desenvolvimento Fullstack & Integrações Inteligentes',
   email: 'enricoleite7@gmail.com',

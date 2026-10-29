@@ -18,7 +18,7 @@ export const translations = {
     },
     profile: {
       role: 'Analista Júnior | C# | .NET | n8n | Flutter',
-      location: 'São Paulo, Brasil',
+      location: 'São José do Rio Preto, São Paulo, Brasil',
       education: 'Análise e Desenvolvimento de Sistemas',
       focus: 'Desenvolvimento Fullstack & Integrações Inteligentes',
       hobbies: ['Tecnologia', 'Música', 'Games'],
@@ -30,7 +30,7 @@ export const translations = {
       contactMe: 'Fale comigo',
       highlights: 'Destaques',
       about: 'Sobre',
-      aboutIntro: (profile) => `Estudante de ${profile.education}, com foco em ${profile.focus}. Gosto de ${profile.hobbies.join(', ').toLowerCase()}.`,
+      aboutIntro: (profile) => `Formado em ${profile.education} pela UNIP, atuo como Analista Júnior de Sistemas em ${profile.location}. Tenho experiência com desenvolvimento web, APIs e integrações.`,
       learnAbout: 'Saiba mais sobre mim →',
       recentProjects: 'Projetos recentes',
       allProjects: 'Ver todos os projetos →',
@@ -45,8 +45,7 @@ export const translations = {
     },
     about: {
       title: 'Sobre mim',
-      intro: (profile) => `Sou estudante de ${profile.education}, atuo como Analista Júnior e moro em ${profile.location}. Meu foco é ${profile.focus}.`,
-      technologies: 'Tecnologias',
+      intro: (profile) => `Sou formado em ${profile.education} pela UNIP e atuo como Analista Júnior de Sistemas em ${profile.location}. Tenho experiência com desenvolvimento web, APIs e integrações, e busco crescer como engenheiro de software.`,
       hobbies: 'Hobbies',
     },
     projects: {
@@ -94,7 +93,7 @@ export const translations = {
     },
     profile: {
       role: 'Junior Analyst | C# | .NET | n8n | Flutter',
-      location: 'São Paulo, Brazil',
+      location: 'São José do Rio Preto, São Paulo, Brazil',
       education: 'Systems Analysis and Development',
       focus: 'Full-Stack Development & Intelligent Integrations',
       hobbies: ['Technology', 'Music', 'Gaming'],
@@ -106,7 +105,7 @@ export const translations = {
       contactMe: 'Get in touch',
       highlights: 'Highlights',
       about: 'About',
-      aboutIntro: (profile) => `A ${profile.education} student focused on ${profile.focus}. I enjoy ${profile.hobbies.join(', ').toLowerCase()}.`,
+      aboutIntro: (profile) => `I hold a degree in ${profile.education} from UNIP and work as a Junior Systems Analyst in ${profile.location}. I have experience with web development, APIs, and integrations.`,
       learnAbout: 'Learn more about me →',
       recentProjects: 'Recent projects',
       allProjects: 'View all projects →',
@@ -121,8 +120,7 @@ export const translations = {
     },
     about: {
       title: 'About me',
-      intro: (profile) => `I am a ${profile.education} student, work as a Junior Analyst, and live in ${profile.location}. My focus is ${profile.focus}.`,
-      technologies: 'Technologies',
+      intro: (profile) => `I hold a degree in ${profile.education} from UNIP and work as a Junior Systems Analyst in ${profile.location}. I have experience with web development, APIs, and integrations, and aim to grow as a software engineer.`,
       hobbies: 'Interests',
     },
     projects: {

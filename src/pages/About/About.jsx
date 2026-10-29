@@ -1,5 +1,4 @@
 import './About.css'
-import { profile as sourceProfile } from '../../data.js'
 
 export default function About({ copy, profile }) {
   return (
@@ -11,14 +10,6 @@ export default function About({ copy, profile }) {
         </p>
       </div>
       <div className="about-groups">
-        <section className="about-group">
-          <h2>{copy.technologies}</h2>
-          <ul className="tags">
-            {sourceProfile.skills.map((s) => (
-              <li key={s}>{s}</li>
-            ))}
-          </ul>
-        </section>
         <section className="about-group">
           <h2>{copy.hobbies}</h2>
           <ul className="tags">

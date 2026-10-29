@@ -135,11 +135,6 @@ export default function Home({ copy }) {
       <p className="page-intro">
         {homeCopy.aboutIntro(localizedProfile)}
       </p>
-      <ul className="tags home-tags">
-        {profile.skills.map((s) => (
-          <li key={s}>{s}</li>
-        ))}
-      </ul>
       <Link to="/sobre" className="section-link">{homeCopy.learnAbout}</Link>
     </section>
 
