@@ -15,5 +15,44 @@
 
 .footer-links {
   display: flex;
-  gap: 1.25rem;
+  gap: 0.5rem;
+}
+
+.footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-control {
+  display: inline-flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  transition: color 180ms ease, background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.footer-control svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.footer-control:hover {
+  border-color: var(--line);
+  background: var(--surface-raised);
+  color: var(--accent-strong);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.footer-control:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
