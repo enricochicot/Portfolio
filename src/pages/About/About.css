@@ -19,38 +19,3 @@
   font-size: 1.15rem;
   line-height: 1.8;
 }
-
-.about-page .about-groups {
-  display: grid;
-  gap: 3.5rem;
-  margin-top: clamp(2rem, 4vw, 3rem);
-}
-
-.about-page .about-group h2 {
-  margin: 0 0 1.1rem;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.75rem;
-  font-weight: 400;
-  letter-spacing: -0.025em;
-}
-
-.about-page .tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.about-page .tags li {
-  display: inline-flex;
-  align-items: center;
-  min-height: 34px;
-  padding: 0.3rem 0.8rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--surface);
-  color: var(--muted);
-  font-size: 0.88rem;
-}

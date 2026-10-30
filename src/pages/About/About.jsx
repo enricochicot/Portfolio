@@ -9,16 +9,6 @@ export default function About({ copy, profile }) {
           {copy.intro(profile)}
         </p>
       </div>
-      <div className="about-groups">
-        <section className="about-group">
-          <h2>{copy.hobbies}</h2>
-          <ul className="tags">
-            {profile.hobbies.map((h) => (
-              <li key={h}>{h}</li>
-            ))}
-          </ul>
-        </section>
-      </div>
     </section>
   )
 }

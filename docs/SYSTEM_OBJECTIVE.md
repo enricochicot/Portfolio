@@ -2,7 +2,7 @@
 
 ## 1. Propósito
 
-O sistema apresenta Enrico Leite e seu trabalho em um portfólio público. A implementação atual reúne informações pessoais e profissionais, habilidades, projetos com links para seus repositórios e meios externos de contato.
+O sistema apresenta Enrico Leite e seu trabalho em um portfólio público. A implementação atual reúne informações pessoais e profissionais, projetos com links para seus repositórios e meios externos de contato.
 
 O propósito de negócio inferível é apoiar a divulgação do perfil profissional e facilitar que visitantes conheçam os projetos ou iniciem contato. O código não especifica metas comerciais, métricas de conversão, público prioritário ou processo de recrutamento; essas interpretações devem ser confirmadas antes de orientar funcionalidades que dependam delas.
 
@@ -26,7 +26,7 @@ São destinos de navegação, não integrações controladas ou monitoradas pela
 ## 3. Fluxos disponíveis
 
 1. **Conhecer a apresentação:** visitante abre `/`, vê nome, função e foco e pode seguir para projetos ou contato.
-2. **Conhecer o perfil:** visitante abre `/sobre` e consulta formação, localização, foco, tecnologias e hobbies.
+2. **Conhecer o perfil:** visitante abre `/sobre` e consulta formação, atuação e experiência profissional.
 3. **Explorar projetos:** visitante abre `/projetos`, consulta cada resumo e pode abrir o repositório correspondente no GitHub.
 4. **Iniciar contato:** visitante abre `/contato` e escolhe o e-mail ou o perfil do GitHub. O envio ou a conversa ocorre fora do sistema.
 5. **Navegar pelo site:** visitante usa o menu compartilhado para alternar entre as quatro rotas; o rodapé apresenta o ano corrente e o nome do proprietário.
@@ -36,7 +36,7 @@ São destinos de navegação, não integrações controladas ou monitoradas pela
 
 ### Capacidades existentes
 
-- Apresentar informações de perfil, habilidades e interesses.
+- Apresentar informações de perfil e experiência profissional.
 - Alternar idioma (português brasileiro/inglês) e tema (claro/escuro) na navegação compartilhada.
 - Listar projetos, suas tecnologias e descrições resumidas.
 - Direcionar visitantes para repositórios GitHub e canais de contato externos.
@@ -56,7 +56,7 @@ Esses limites descrevem a implementação observada; não são decisões permane
 
 ## 5. Conteúdo apresentado
 
-O perfil expõe nome, função, localização, formação, foco profissional, e-mail, GitHub, hobbies e habilidades. Cada projeto possui título, descrição, tecnologia e URL. A origem atual de todos esses dados é estática e única: `src/data.js`.
+O perfil expõe nome, função, formação, foco profissional, e-mail e GitHub. Quatro tecnologias também são destacadas visualmente na Home. Cada projeto possui título, descrição, tecnologia e URL. Os dados de perfil e projetos são mantidos em `src/data.js`; as tecnologias destacadas na Home são definidas no componente da página.
 
 O idioma do documento está definido como `pt-BR`, e os textos de navegação e conteúdo estão em português. Uma futura expansão de idiomas deve tratar tanto os textos da interface quanto os dados de conteúdo.
 
