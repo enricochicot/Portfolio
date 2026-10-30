@@ -2,7 +2,7 @@
 
 ## 1. Escopo e estado atual
 
-O sistema é um site de portfólio pessoal, entregue como aplicação web de página única (SPA). O navegador recebe o ponto de entrada HTML e executa uma aplicação React; as rotas são resolvidas no cliente. Perfil, habilidades, hobbies e projetos são dados estáticos importados de `src/data.js`.
+O sistema é um site de portfólio pessoal, entregue como aplicação web de página única (SPA). O navegador recebe o ponto de entrada HTML e executa uma aplicação React; as rotas são resolvidas no cliente. Perfil e projetos são dados estáticos importados de `src/data.js`.
 
 O código não implementa servidor de aplicação, API, banco de dados, autenticação, autorização, telemetria, testes automatizados ou integração de envio de mensagens. O contato é feito por links `mailto:` e GitHub. Portanto, não há operações de escrita nem estado de negócio persistido.
 
@@ -50,7 +50,7 @@ O projeto declara `"type": "module"` e usa imports/exports ES Modules. Não há 
 | Caminho | Componente | Comportamento |
 | --- | --- | --- |
 | `/` | `src/pages/Home/Home.jsx` (`Home`) | Exibe nome, função, foco e links internos para projetos e contato. |
-| `/sobre` | `src/pages/About/About.jsx` (`About`) | Exibe formação, função, localização, foco, habilidades e hobbies. |
+| `/sobre` | `src/pages/About/About.jsx` (`About`) | Exibe formação, função e experiência profissional. |
 | `/projetos` | `src/pages/Projects/Projects.jsx` (`Projects`) | Percorre a coleção `projects` e apresenta cartões com título, descrição, tecnologia e link externo ao GitHub. |
 | `/contato` | `src/pages/Contact/Contact.jsx` (`Contact`) | Exibe link de e-mail `mailto:` e link externo para GitHub. |
 | `*` | elemento inline em `App` | Exibe uma mensagem básica de página não encontrada. |
@@ -61,7 +61,7 @@ O menu usa `NavLink`, com `end` aplicado à rota `/` para que a indicação de a
 
 ## 6. Dados e contratos observáveis
 
-`profile` é um objeto único com `name`, `role`, `location`, `education`, `focus`, `email`, `github`, `hobbies` e `skills`. `hobbies` e `skills` são arrays de texto.
+`profile` é um objeto único com `name`, `role`, `education`, `focus`, `email` e `github`. Na Home, quatro tecnologias são apresentadas por ícones definidos diretamente em `src/pages/Home/Home.jsx`. `projects` é uma lista de objetos com `title`, `description`, `tech` e `link`.
 
 `projects` é uma lista de objetos com `title`, `description`, `tech` e `link`. `Projects` usa `title` como chave React, portanto os títulos precisam ser únicos na lista. O conteúdo é mantido no código-fonte e suas alterações exigem novo build e publicação.
 

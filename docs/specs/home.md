@@ -9,7 +9,7 @@ A tela HOME é a página inicial do portfólio, onde são apresentados os princi
 - **Destaques:** Apresenta os principais projetos ou conquistas do autor.
 - **Sobre:** Breve descrição sobre o autor.
 - **Projetos:** Lista de projetos recentes com links para detalhes.
-- **Contato:** Informações de contato e formulário de mensagem.
+- **Contato:** Cartões para e-mail, localização e LinkedIn, links para redes sociais e formulário com nome, e-mail, assunto e mensagem. O envio abre o aplicativo de e-mail do visitante.
 - **Rodapé:** Informações adicionais e links para redes sociais.
 
 ## Estilização

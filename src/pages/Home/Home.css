@@ -6,6 +6,10 @@
   min-height: min(58vh, 590px);
 }
 
+.home-page .hero-main {
+  text-align: center;
+}
+
 .home-page .hero-main h1 {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
@@ -18,7 +22,7 @@
 
 .home-page .lead {
   max-width: 39rem;
-  margin: 1.75rem 0 0;
+  margin: 1.75rem auto 0;
   color: var(--muted);
   font-size: clamp(1.1rem, 2.4vw, 1.4rem);
   line-height: 1.55;
@@ -28,6 +32,7 @@
 .home-page .actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.85rem;
   margin-top: 2.5rem;
 }
@@ -70,7 +75,7 @@
   position: relative;
   width: min(100%, 380px);
   aspect-ratio: 1;
-  justify-self: end;
+  justify-self: center;
 }
 
 .home-page .hero-portrait {
@@ -196,14 +201,16 @@
   font-size: clamp(1.9rem, 4vw, 2.6rem);
   font-weight: 400;
   letter-spacing: -0.03em;
+  text-align: center;
 }
 
 .home-page .page-intro {
   max-width: 66ch;
-  margin: 0;
+  margin: 0 auto;
   color: var(--muted);
   font-size: 1.15rem;
   line-height: 1.8;
+  text-align: center;
 }
 
 .home-page .tags {
@@ -233,22 +240,28 @@
   font-weight: 600;
 }
 
+.home-page .home-section {
+  text-align: center;
+}
+
 .home-page .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 1rem;
+  text-align: center;
 }
 
 .home-page .card {
   display: flex;
   min-height: 240px;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding: clamp(1.35rem, 3vw, 1.8rem);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
   transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+  text-align: center;
 }
 
 .home-page .card:hover {
@@ -311,76 +324,225 @@
 
 .home-page .home-contact {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: start;
-  gap: 2.5rem;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  max-width: 1120px;
+  margin-inline: auto;
 }
 
-.home-page .contact-links {
-  max-width: 720px;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid var(--line);
-  list-style: none;
+.home-page .contact-info {
+  display: grid;
+  gap: 0.9rem;
 }
 
-.home-page .contact-links li {
+.home-page .contact-methods {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.home-page .contact-method {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1.5rem;
-  padding: 1.25rem 0;
-  border-bottom: 1px solid var(--line);
+  min-width: 0;
+  min-height: 104px;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  text-align: left;
+  text-decoration: none;
+  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
 }
 
-.home-page .contact-links li > span {
-  color: var(--muted);
+.home-page a.contact-method:hover {
+  transform: translateY(-2px);
+  border-color: var(--card-hover-line);
+  background: var(--surface-raised);
+  color: var(--text);
+  text-decoration: none;
 }
 
-.home-page .contact-links a {
+.home-page .contact-method-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--surface-raised);
+  color: var(--accent);
+}
+
+.home-page .contact-method-icon svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+}
+
+.home-page .contact-method-icon-brand svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+.home-page .contact-method-copy {
+  display: grid;
+  min-width: 0;
+  gap: 0.12rem;
+}
+
+.home-page .contact-method-copy strong {
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.home-page .contact-method-value {
   overflow-wrap: anywhere;
-  font-size: clamp(1rem, 2.6vw, 1.25rem);
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.home-page .contact-method-description {
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.home-page .contact-method-arrow {
+  width: 19px;
+  height: 19px;
+  flex: 0 0 auto;
+  margin-left: auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
 }
 
 .home-page .contact-form {
   display: grid;
-  gap: 1.1rem;
+  width: 100%;
+  max-width: 428px;
+  justify-self: end;
+  gap: 0.6rem;
+  padding: clamp(0.85rem, 2vw, 1.15rem);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.home-page .contact-form-title {
+  margin: 0;
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  text-align: center;
+}
+
+.home-page .contact-form-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem 0.7rem;
+}
+
+.home-page .contact-form-wide {
+  grid-column: 1 / -1;
 }
 
 .home-page .contact-form label {
   display: grid;
-  gap: 0.4rem;
-  color: var(--muted);
-  font-size: 0.9rem;
+  gap: 0.3rem;
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.home-page .contact-form .required-mark {
+  color: var(--accent);
 }
 
 .home-page .contact-form input,
+.home-page .contact-form select,
 .home-page .contact-form textarea {
-  padding: 0.75rem 0.9rem;
+  width: 100%;
+  min-height: 36px;
+  padding: 0.45rem 0.6rem;
   border: 1px solid var(--line);
-  border-radius: 6px;
-  background: var(--surface);
+  border-radius: 8px;
+  background: var(--bg);
   color: var(--text);
   font: inherit;
+}
+
+.home-page .contact-form input::placeholder,
+.home-page .contact-form textarea::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+.home-page .contact-form select {
+  cursor: pointer;
+}
+
+.home-page .contact-form textarea {
+  min-height: 4rem;
   resize: vertical;
 }
 
 .home-page .contact-form input:focus-visible,
+.home-page .contact-form select:focus-visible,
 .home-page .contact-form textarea:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
 .home-page .contact-form .btn {
-  justify-self: start;
+  display: inline-flex;
+  width: 100%;
+  min-height: 40px;
+  gap: 0.65rem;
   cursor: pointer;
 }
 
+.home-page .contact-form .btn svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
 @media (max-width: 760px) {
+  .home-page .home-contact {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+
+  .home-page .contact-form {
+    justify-self: stretch;
+    max-width: none;
+  }
+
   .home-page .hero {
     grid-template-columns: 1fr;
     gap: 2.75rem;
     min-height: auto;
+  }
+
+  .home-page .hero-main {
+    justify-self: center;
   }
 
   .home-page .hero-main h1 {
@@ -389,6 +551,16 @@
 
   .home-page .hero-aside {
     justify-self: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .home-page .contact-form-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .contact-form-wide {
+    grid-column: auto;
   }
 }
 
@@ -423,12 +595,6 @@
   .home-page .hero-portrait {
     width: 56%;
     height: 56%;
-  }
-
-  .home-page .contact-links li {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.35rem;
   }
 }
 

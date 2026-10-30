@@ -1,13 +1,10 @@
 export const profile = {
   name: 'Enrico Leite',
   role: 'Analista Júnior | C# | .NET | n8n | Flutter',
-  location: 'São Paulo, Brasil',
   education: 'Análise e Desenvolvimento de Sistemas',
   focus: 'Desenvolvimento Fullstack & Integrações Inteligentes',
   email: 'enricoleite7@gmail.com',
   github: 'https://github.com/enricochicot',
-  hobbies: ['Tecnologia', 'Música', 'Games'],
-  skills: ['C#', 'TypeScript', 'JavaScript', 'React', 'HTML5', 'CSS3', 'SQL', 'Java', 'Flutter'],
 }
 
 export const projects = [
